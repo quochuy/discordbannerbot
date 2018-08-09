@@ -26,6 +26,7 @@ const app = {
 
         if (msg.content.startsWith(discordHelper.commandPrefix)) {
           switch(command) {
+            // Duplicate/replace this with your own
             case "frfooter":
               app.discordActions.frFooter(args, msg);
               break;

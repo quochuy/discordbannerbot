@@ -23,7 +23,7 @@ const blankBanner = __dirname + '/../assets/images/frbanner.png';
  * End of Customization **********
  */
 
-const maketabanner = {
+const makebanner = {
   /**
    * Generate a PNG banner
    *
@@ -53,7 +53,7 @@ const maketabanner = {
       const usernameTextPositionX = Math.round(usernameBarWidth - usernameTextWidth);
 
       // Generate the text with letter spacing and adjust its X position if needed.
-      maketabanner.stringFtSp(
+      makebanner.stringFtSp(
         banner, color, sourceFont, textSize, textAngle, usernameTextPositionX, textPositionY, username,
         textLetterSpacing, true
       );
@@ -108,4 +108,4 @@ const maketabanner = {
   }
 };
 
-module.exports = maketabanner;
+module.exports = makebanner;
