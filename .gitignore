@@ -1,0 +1,5 @@
+.idea
+bot/node_modules
+bot/logs
+bot/assets/banners
+bot/configs/discord.json

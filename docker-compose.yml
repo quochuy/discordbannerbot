@@ -1,0 +1,17 @@
+version: "3"
+services:
+  bannerbot:
+    build: .
+    container_name: bannerbot
+    user: "node"
+    working_dir: /opt/bot
+    volumes:
+      - ./bot/assets:/opt/bot/assets:cached
+      - ./bot/logs:/opt/bot/logs:cached
+      - ./bot/configs:/opt/bot/configs:delegated
+      - ./bot/modules:/opt/bot/modules:delegated
+      - ./bot/commands:/opt/bot/commands:delegated
+      - ./bot/bot.js:/opt/bot/bot.js:delegated
+      - ./bot/run.sh:/opt/bot/run.sh:delegated
+    command: bash run.sh
+    restart: always
