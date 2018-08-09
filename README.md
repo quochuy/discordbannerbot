@@ -25,14 +25,6 @@ If you want to run docker with another user than root, add your username into th
 
 > cd discordbannerbot
 
-Copy configs/discord.distrib.json discord.json as config.json and customize it.
-
-- Build: `docker-compose build` (CTRL + C to exit)
-- Launch: `docker-compose up`
-- To launch in the background: `docker-compose up -d`
-- To stop the container running in the background: `docker-compose down`
-- To check the bot output: `tail -f bot/logs/bot.log`
-
 ## Customizing the banners
 You should clone or replace any files containing the string "frbanner".
 
@@ -44,3 +36,21 @@ The module that will actually generate the customize banner in PNG format: bot/m
 
 Additionally, edit the main module to bot.js in "app.discordActions", add/replace "frFooter" with your own. 
 
+Finally, edit the bot/module/makefrbanner.js (or your cloned one) and customize the parameters at the top (text color, font files etc...)
+
+## Linking to a Discord server
+Follow the steps on the following page to create your own Discord server, app and bot:
+https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token
+
+Copy bot/configs/discord.distrib.json discord.json as config.json and customize it with your app token.
+
+You are now ready to Launch your bot.
+
+## Build and launch the bot
+- Build: `docker-compose build` (CTRL + C to exit)
+- Launch: `docker-compose up`
+- To launch in the background: `docker-compose up -d`
+- To stop the container running in the background: `docker-compose down`
+- To check the bot output: `tail -f bot/logs/bot.log`
+
+If you make some changes that does not require any extra NPM modules, you can just restart the bot to see the changes: `docker-compose restart`.
