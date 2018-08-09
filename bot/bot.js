@@ -27,8 +27,8 @@ const app = {
         if (msg.content.startsWith(discordHelper.commandPrefix)) {
           switch(command) {
             // Duplicate/replace this with your own
-            case "frfooter":
-              app.discordActions.frFooter(args, msg);
+            case "makebanner":
+              app.discordActions.makeBanner(args, msg);
               break;
 
             case 'help':
@@ -46,10 +46,10 @@ const app = {
    */
   discordActions: {
     // Duplicate/replace this with your own
-    frFooter: require('./commands/discord/frbanner').makeFooter,
+    makeBanner: require('./commands/discord/makebanner').generate,
 
     displayHelp: function(msg) {
-      discordHelper.sendMessageToChannel(msg.channel, `To generate your footer banner type: \`${discordHelper.commandPrefix}frfooter nickname\``);
+      discordHelper.sendMessageToChannel(msg.channel, `To generate your footer banner type: \`${discordHelper.commandPrefix}makefooter nickname\``);
     }
   }
 };

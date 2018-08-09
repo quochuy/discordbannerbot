@@ -1,25 +1,25 @@
 // Duplicate/replace this file with your own
 
 const discordhelper = require('../../modules/discordhelper.js');
-const makefrbanner = require('../../modules/makefrbanner.js');
+const makebanner = require('../../modules/makebanner.js');
 const logger = require('../../modules/logger');
 
-const frbanner = {
+const makeBannerCmd = {
   /**
    *
    * @param args
    * @param msg
    * @returns {Promise<void>}
    */
-  makeFooter: async function(args, msg) {
+  generate: async function(args, msg) {
     const account = args[0];
-    const valid = await frbanner.validateMember(account);
+    const valid = await makeBannerCmd.validateMember(account);
 
     logger.log("Received a request for a banner for", account);
 
     if (valid === true) {
       logger.log("Valid member", account);
-      const bannerPath = await makefrbanner.generate(account);
+      const bannerPath = await makebanner.generate(account);
       if (bannerPath) {
         discordhelper.sendFileToChannel(msg.channel, `Banner for ${account}:`, bannerPath);
       }
@@ -42,4 +42,4 @@ const frbanner = {
   },
 };
 
-module.exports = frbanner;
+module.exports = makeBannerCmd;

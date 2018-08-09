@@ -17,7 +17,7 @@ const textAngle = 0;
 const usernameBarWidth = 620;
 
 const sourceFont = __dirname + '/../assets/fonts/Times New Roman.ttf';
-const blankBanner = __dirname + '/../assets/images/frbanner.png';
+const blankBanner = __dirname + '/../assets/images/banner.png';
 
 /**
  * End of Customization **********
@@ -40,7 +40,7 @@ const makebanner = {
 
       const color = banner.colorAllocate.apply(banner, textColor);
 
-      const outputPath = __dirname + '/../assets/banners/frbanner-' + username.replace(/[^a-zA-Z0-9]/g, '-') + '.png';
+      const outputPath = __dirname + '/../assets/banners/banner-' + username.replace(/[^a-zA-Z0-9]/g, '-') + '.png';
       username = "@" + username;
 
       // As we will be right-aligning the nickname, we need to find out the total width of the text

@@ -26,17 +26,17 @@ If you want to run docker with another user than root, add your username into th
 > cd discordbannerbot
 
 ## Customizing the banners
-You should clone or replace any files containing the string "frbanner".
+You should clone or replace any files containing the string "makebanner".
 
-The blank banner in PNG format: bot/assets/images/frbanner.png
+The blank banner in PNG format: bot/assets/images/makebanner.png
 
-The module that will receive requests from a Discord channel: bot/commands/discord/frbanner.js
+The module that will receive requests from a Discord channel: bot/commands/discord/makebannerer.js
 
-The module that will actually generate the customize banner in PNG format: bot/modules/makefrbanner.js
+The module that will actually generate the customize banner in PNG format: bot/modules/makebanner.js
 
 Additionally, edit the main module to bot.js in "app.discordActions", add/replace "frFooter" with your own. 
 
-Finally, edit the bot/module/makefrbanner.js (or your cloned one) and customize the parameters at the top (text color, font files etc...)
+Finally, edit the bot/module/makebanner.js (or your cloned one) and customize the parameters at the top (text color, font files etc...)
 
 ## Linking to a Discord server
 Follow the steps on the following page to create your own Discord server, app and bot:
